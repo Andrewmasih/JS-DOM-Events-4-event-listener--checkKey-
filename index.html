@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>adding or removing classes</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Charlies Chocolate Factory</h1>
+    <h2> How do you like your chocolate? </h2>
+    <button onclick="lightTheme()"> Light </button>
+    <button onclick="darkTheme()"> Dark </button>
+    <span> press the light for light Chocolate and dark for dark Chocolate </span>
+    <div id = "mainDiv" class = "light">
+      <h3> We make the best chocolate in the world! </h3>
+      <p> Click on your favourite type of chocolate </p>
+      <p> Win a prize to our chocolate factory :) </p>
+    </div>
+    <script>
+      
+      document.addEventListener ("keyup", function (event) {
+        if (event.key == "l"|| event.key == "L") {
+          lightTheme();
+  
+        }
+
+        if (event.key == "d" || event.key == "D") {
+          darkTheme();
+        }
+
+      });
+
+      function lightTheme ()  {
+        el = document.getElementById ("mainDiv");
+        el.classList.remove ("dark");
+        el.classList.add ("light");
+      }
+
+      function darkTheme ()  {
+        el = document.getElementById ("mainDiv");
+        el.classList.remove ("dark");
+        el.classList.add ("light");
+      }
+    </script>
+  </body>
+</html>
+
+<!-- we could also call an external function, rather than writting it inline as part of the 'event listener'. lets say that we had the following function 'function checkKey (event)', which checked the key presses for us. To call this function, we'd use the following code when setting up our 'event listener' -->
+
+<!-- 'document.addEventListener("keyup", checkKey)', notice, we didnt 
+supply the parentheses, just the function name -->
+
+<!-- to remove an 'event listener', we can use the 'removeEventListener' method. To use this method, our function must be extented rather than inline. -->
+
+
+
+
